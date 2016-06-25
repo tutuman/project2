@@ -1,0 +1,69 @@
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Google Maps API</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>        
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"> </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initialize"
+    async defer></script>
+     <script src='http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js'>
+  </script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/1.2.1/knockout-min.js"> </script>
+   <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+   
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="col-md-12 col-sm-12">
+        <div class="col-md-3 sidebar nopadding col-sm-3">
+
+          <div class="">
+            <h3 style="color:#999", textAlign = "center"; class="nopadding">Bart Location</h3>
+            <form method="post">
+              <div class="form-group">
+                <input type="text" id="searchquery" class="form-control" name="q"  autocomplete="off" placeholder="Station Locations">
+
+              </div>
+              <a href="javascript:void(0);" data-bind="click: query" class="btn btn-danger">Filter</a>
+            
+          </form>
+
+          <div class="filter_elements">
+            <ul data-bind="template: {name:'place', foreach:places}">
+    </ul>
+
+     <script data-proofer-ignore type="text/html" id="place">
+    <li>
+      <strong data-bind="text: address"></strong>
+      
+      
+    </li>
+  </script>
+          </div>
+
+         </div>
+       </div>
+       <div class="main col-md-9 nopadding col-sm-9">
+        <div class="">
+          <div class="main_header">
+              <a href="javascript:void(0)" onclick="sidebar()"><i class="glyphicon glyphicon-align-justify"></i></a>
+          </div>
+
+        <div id="meromap" class="col-md-12">
+
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  </body>
+
+</html>
